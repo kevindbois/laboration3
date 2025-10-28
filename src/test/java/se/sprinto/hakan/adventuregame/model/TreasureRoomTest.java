@@ -2,8 +2,6 @@ package se.sprinto.hakan.adventuregame.model;
 
 import org.junit.jupiter.api.Test;
 import se.sprinto.hakan.adventuregame.view.FakeUI;
-import se.sprinto.hakan.adventuregame.model.Player;
-import se.sprinto.hakan.adventuregame.model.TreasureRoom;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
