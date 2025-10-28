@@ -1,5 +1,4 @@
-package se.sprinto.hakan.adventuregame;
-
+package se.sprinto.hakan.adventuregame.view;
 import se.sprinto.hakan.adventuregame.dao.FileStatisticsDao;
 import se.sprinto.hakan.adventuregame.dao.StatisticsDao;
 import se.sprinto.hakan.adventuregame.model.Player;
@@ -7,8 +6,6 @@ import se.sprinto.hakan.adventuregame.model.StartRoom;
 import se.sprinto.hakan.adventuregame.model.Statistics;
 import se.sprinto.hakan.adventuregame.service.StatisticsService;
 import se.sprinto.hakan.adventuregame.util.AppInfo;
-import se.sprinto.hakan.adventuregame.view.ScannerUI;
-import se.sprinto.hakan.adventuregame.view.UI;
 
 public class Main {
 
@@ -18,7 +15,13 @@ public class Main {
         ui.showMessage("Välkommen till Äventyrsspelet!");
         ui.showMessage("Version " + appInfo.getVersion() + " av " + appInfo.getAuthor());
         String name = ui.getInput("Ange ditt namn:");
-        Player player = new Player(name, 100, 0, 10);
+        Player player = new Player.Builder()
+                .setName(name)
+                .setHealth(100)
+                .setScore(0)
+                .setStrength(10)
+                .build();
+
 
         new StartRoom().enterRoom(player, ui);
 
