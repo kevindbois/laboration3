@@ -9,7 +9,7 @@ public class StartRoom implements Room {
         ui.showMessage("Du befinner dig i start-rummet. Du ser tre dörrar framför dig.");
         boolean exit = false;
         while (!exit) {
-            String choice = ui.getInput("Vilken dörr vill du ta? (1=Skog, 2=Fängelse, 3=Skattkammare, q=avsluta)");
+            String choice = ui.getInput("Vilken dörr vill du ta? (1=Skog, 2=Fängelse, 3=Skattkammare, 4=Kyrkgård q=avsluta)");
             switch (choice) {
                 case "1":
                     if (!player.hasFoundKey()) {
@@ -28,6 +28,9 @@ public class StartRoom implements Room {
                     } else {
                         System.out.println("Du har redan hittat och öppnat kistan");
                     }
+                    break;
+                case "4":
+                    new CemetaryRoom().enterRoom(player, ui);
                     break;
                 case "q":
                     exit = true;
