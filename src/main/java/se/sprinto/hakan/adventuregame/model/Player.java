@@ -5,6 +5,21 @@ public class Player extends AbstractCharacter {
     private boolean defeatedEnemy;
     private boolean openedChest;
 
+    public static class Builder {
+        private String name;
+        private int health;
+        private int score;
+        private int strength;
+
+
+        void setHealth() {
+            this.health = health;
+        }
+
+
+
+    }
+
     public Player(String name, int health, int score, int strength) {
         super(name, health, score, strength);
     }

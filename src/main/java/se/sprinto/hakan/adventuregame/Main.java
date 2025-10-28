@@ -6,6 +6,7 @@ import se.sprinto.hakan.adventuregame.model.Player;
 import se.sprinto.hakan.adventuregame.model.StartRoom;
 import se.sprinto.hakan.adventuregame.model.Statistics;
 import se.sprinto.hakan.adventuregame.service.StatisticsService;
+import se.sprinto.hakan.adventuregame.util.AppInfo;
 import se.sprinto.hakan.adventuregame.view.ScannerUI;
 import se.sprinto.hakan.adventuregame.view.UI;
 
@@ -13,8 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
         UI ui = new ScannerUI();
+        AppInfo appInfo = AppInfo.getInstance();
         ui.showMessage("Välkommen till Äventyrsspelet!");
-        ui.showMessage("Version 1.0 av Håkan Gleissman");
+        ui.showMessage("Version " + appInfo.getVersion() + " av " + appInfo.getAuthor());
         String name = ui.getInput("Ange ditt namn:");
         Player player = new Player(name, 100, 0, 10);
 
