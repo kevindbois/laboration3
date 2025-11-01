@@ -12,7 +12,7 @@ public class SewerRoom implements Room {
             String choice = ui.getInput("Vill du (a)ttackera eller (r)etirera?");
             if (choice.equalsIgnoreCase("a")) {
                 player.attack(rat);
-                ui.showMessage("Du attackerade råttan: Råttans HP: " + rat.getHealth());
+                ui.showMessage("Du attackerade råttan");
                 if (rat.isAlive()) {
                     rat.attack(player);
                     ui.showMessage("Råttan attackerade dig! Ditt HP: " + player.getHealth());

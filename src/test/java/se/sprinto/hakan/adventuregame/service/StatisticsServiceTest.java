@@ -12,15 +12,15 @@ public class StatisticsServiceTest {
 
 
     @Test
-    void getSortedStatistics_shouldReturnSortedList() {
+    void getSortedStatistics_HighToLow() {
         FakeFileStatisticsDao fakeDao = new FakeFileStatisticsDao();
         StatisticsService service = new StatisticsService(fakeDao);
 
 
-        List<Statistics> result = service.getSortedStatistics();
+        List<Statistics> sortedList = service.getSortedStatistics();
 
-        assertEquals(40, result.get(0).getScore(), "borde resultera med 40");
-        assertEquals(100, result.get(1).getScore(), "borde resultera med 100");
-        assertEquals(30, result.get(2).getScore(), "Borde resultera med 30");
+        assertEquals("Kevin", sortedList.get(0).getPlayerName(), "BORDE VARA KEVIN(100)");
+        assertEquals("Håkan", sortedList.get(1).getPlayerName(), "BORDE VARA HÅKAN(40)");
+        assertEquals("Joel", sortedList.get(2).getPlayerName(), "BORDE VARA JOEL(30)");
     }
 }

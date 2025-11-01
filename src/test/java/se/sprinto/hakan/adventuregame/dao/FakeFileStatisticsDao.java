@@ -16,8 +16,8 @@ public class FakeFileStatisticsDao implements StatisticsDao {
         return new ArrayList<>(List.of(
                 new Statistics("Håkan", 40),
                 new Statistics("Kevin", 100),
-                new Statistics("Joel", 30
-                )
+                new Statistics("Joel", 30)
+
         ));
     }
 }
